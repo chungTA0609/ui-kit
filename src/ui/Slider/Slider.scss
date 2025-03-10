@@ -1,0 +1,36 @@
+.ui-slider {
+  padding: $spacing-xs 0;
+  
+  &__header {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin-bottom: $spacing-xs;
+  }
+  
+  &__value {
+    font-size: $font-size-small;
+    color: rgba(0, 0, 0, 0.6);
+  }
+  
+  &__control {
+    &.MuiSlider-root {
+      color: $primary-color;
+      
+      .MuiSlider-thumb {
+        &:hover, &.Mui-focusVisible {
+          box-shadow: 0 0 0 8px rgba($primary-color, 0.16);
+        }
+        
+        &.Mui-active {
+          box-shadow: 0 0 0 14px rgba($primary-color, 0.16);
+        }
+      }
+      
+      .MuiSlider-rail {
+        background-color: rgba(0, 0, 0, 0.25);
+      }
+    }
+  }
+}
+

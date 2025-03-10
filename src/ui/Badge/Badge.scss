@@ -1,0 +1,93 @@
+.ui-badge {
+  &.MuiBadge-root {
+    .MuiBadge-badge {
+      font-size: 10px;
+      height: 18px;
+      min-width: 18px;
+      padding: 0 5px;
+      border-radius: 9px;
+    }
+  }
+  
+  &--primary {
+    &.MuiBadge-root .MuiBadge-badge {
+      background-color: $primary-color;
+      color: white;
+    }
+    
+    &.ui-badge--standalone {
+      background-color: $primary-color;
+      color: white;
+    }
+  }
+  
+  &--secondary {
+    &.MuiBadge-root .MuiBadge-badge {
+      background-color: $secondary-color;
+      color: white;
+    }
+    
+    &.ui-badge--standalone {
+      background-color: $secondary-color;
+      color: white;
+    }
+  }
+  
+  &--success {
+    &.MuiBadge-root .MuiBadge-badge {
+      background-color: $success-color;
+      color: white;
+    }
+    
+    &.ui-badge--standalone {
+      background-color: $success-color;
+      color: white;
+    }
+  }
+  
+  &--error {
+    &.MuiBadge-root .MuiBadge-badge {
+      background-color: $error-color;
+      color: white;
+    }
+    
+    &.ui-badge--standalone {
+      background-color: $error-color;
+      color: white;
+    }
+  }
+  
+  &--warning {
+    &.MuiBadge-root .MuiBadge-badge {
+      background-color: $warning-color;
+      color: white;
+    }
+    
+    &.ui-badge--standalone {
+      background-color: $warning-color;
+      color: white;
+    }
+  }
+  
+  &--info {
+    &.MuiBadge-root .MuiBadge-badge {
+      background-color: $info-color;
+      color: white;
+    }
+    
+    &.ui-badge--standalone {
+      background-color: $info-color;
+      color: white;
+    }
+  }
+  
+  &--standalone {
+    display: inline-block;
+    padding: 2px 8px;
+    border-radius: 12px;
+    font-size: 12px;
+    font-weight: $font-weight-bold;
+    line-height: 1.5;
+  }
+}
+

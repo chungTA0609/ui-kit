@@ -1,0 +1,46 @@
+@import '../styles/variables.scss';
+
+.header {
+  &__toolbar {
+    @include flex-between;
+    padding: $spacing-sm $spacing-md;
+  }
+  
+  &__title {
+    font-weight: $font-weight-bold;
+    flex-grow: 1;
+  }
+  
+  &__menu-button {
+    margin-right: $spacing-md;
+  }
+  
+  &__actions {
+    display: flex;
+    align-items: center;
+    gap: $spacing-sm;
+  }
+  
+  &__theme-switch {
+    margin-right: $spacing-sm;
+    
+    &-label {
+      font-size: $font-size-small;
+      margin-right: $spacing-xs;
+    }
+  }
+}
+
+// Dark mode styles
+.dark {
+  .header {
+    &__toolbar {
+      background-color: $paper-dark;
+    }
+    
+    &__title {
+      color: white;
+    }
+  }
+}
+

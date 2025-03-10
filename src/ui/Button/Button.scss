@@ -1,0 +1,160 @@
+// Button variables
+$button-radius: 4px;
+$button-radius-rounded: 20px;
+$button-height: 36px;
+$button-padding: 0 16px;
+$button-font-size: 14px;
+$button-font-weight: 500;
+
+// Button colors
+$button-colors: (
+  'primary': #4154F1,
+  'secondary': #F85B88,
+  'success': #4CAF50,
+  'info': #2196F3,
+  'warning': #FFA726,
+  'help': #9C27B0,
+  'danger': #F44336
+);
+
+// Button styles
+.ui-button {
+  height: $button-height;
+  padding: $button-padding;
+  border-radius: $button-radius;
+  font-size: $button-font-size;
+  font-weight: $button-font-weight;
+  text-transform: none;
+  transition: all 0.2s ease-in-out;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
+  cursor: pointer;
+  border: none;
+  outline: none;
+
+  // Generate styles for each color variant
+  @each $name, $color in $button-colors {
+    &--#{$name} {
+      background-color: $color;
+      color: white;
+
+      &:hover {
+        background-color: darken($color, 10%);
+      }
+
+      &.ui-button--outlined {
+        background-color: transparent;
+        border: 1px solid $color;
+        color: $color;
+
+        &:hover {
+          background-color: rgba($color, 0.1);
+        }
+      }
+
+      &.ui-button--text {
+        background-color: transparent;
+        color: $color;
+        padding: 0;
+        height: auto;
+
+        &:hover {
+          background-color: transparent;
+          text-decoration: underline;
+        }
+      }
+    }
+  }
+
+  // Rounded variant
+  &--rounded {
+    border-radius: $button-radius-rounded;
+  }
+
+  // Icon-only button
+  &--icon-only {
+    width: $button-height;
+    padding: 0;
+    border-radius: 50%;
+
+    .MuiSvgIcon-root {
+      font-size: 20px;
+    }
+  }
+
+  // Split button
+  &--split {
+    padding-right: 8px;
+
+    .ui-button__dropdown {
+      padding: 0 4px;
+      border-left: 1px solid rgba(255, 255, 255, 0.3);
+      margin-left: 4px;
+    }
+  }
+
+  // Button group
+  &--group {
+    .ui-button {
+      border-radius: 0;
+
+      &:first-child {
+        border-top-left-radius: $button-radius;
+        border-bottom-left-radius: $button-radius;
+      }
+
+      &:last-child {
+        border-top-right-radius: $button-radius;
+        border-bottom-right-radius: $button-radius;
+      }
+    }
+  }
+
+  // Disabled state
+  &:disabled {
+    background-color: #E0E0E0;
+    color: #9E9E9E;
+    cursor: not-allowed;
+
+    &:hover {
+      background-color: #E0E0E0;
+    }
+  }
+
+  // Loading state
+  &--loading {
+    position: relative;
+    pointer-events: none;
+
+    .ui-button__spinner {
+      position: absolute;
+      left: 50%;
+      top: 50%;
+      transform: translate(-50%, -50%);
+    }
+
+    .ui-button__content {
+      visibility: hidden;
+    }
+  }
+}
+
+// Template buttons
+.ui-button--template {
+  &-google {
+    background-color: #DB4437;
+    color: white;
+  }
+
+  &-twitter {
+    background-color: #1DA1F2;
+    color: white;
+  }
+
+  &-discord {
+    background-color: #7289DA;
+    color: white;
+  }
+}

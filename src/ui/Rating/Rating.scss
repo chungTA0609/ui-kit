@@ -1,0 +1,68 @@
+.ui-rating {
+    display: inline-flex;
+    align-items: center;
+    gap: 4px;
+
+    &__clear,
+    &__star {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        padding: 2px;
+        background: none;
+        border: none;
+        cursor: pointer;
+        transition: transform 0.2s ease;
+        color: #E2E8F0;
+
+        &:hover {
+            transform: scale(1.1);
+        }
+
+        &:disabled {
+            cursor: not-allowed;
+            opacity: 0.6;
+
+            &:hover {
+                transform: none;
+            }
+        }
+    }
+
+    &__clear {
+        color: #E53E3E;
+
+        &--active {
+            color: #E53E3E;
+        }
+
+        &:hover {
+            color: #C53030;
+        }
+    }
+
+    &__star {
+        color: #E2E8F0;
+
+        svg {
+            fill: transparent;
+            stroke: #4154F1;
+            stroke-width: 2;
+            transition: all 0.2s ease;
+        }
+
+        &--filled {
+            svg {
+                fill: #4154F1;
+                stroke: #4154F1;
+            }
+        }
+
+        &:hover {
+            svg {
+                fill: #4154F1;
+                stroke: #4154F1;
+            }
+        }
+    }
+}

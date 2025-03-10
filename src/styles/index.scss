@@ -1,0 +1,89 @@
+// Import variables and mixins first
+@import './variables.scss';
+
+// Import main styles
+@import './main.scss';
+
+// Import component-specific styles
+@import '../components/Dashboard.scss';
+@import '../components/Header.scss';
+
+// Import UI components
+@import '../ui/ui.scss';
+
+// Import form layouts
+@import './form-layouts.scss';
+
+// Global utility classes
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 $spacing-md;
+}
+
+.flex {
+  display: flex;
+
+  &-center {
+    @include flex-center;
+  }
+
+  &-between {
+    @include flex-between;
+  }
+
+  &-column {
+    flex-direction: column;
+  }
+}
+
+// Spacing utilities
+.mt {
+  &-1 {
+    margin-top: $spacing-xs;
+  }
+
+  &-2 {
+    margin-top: $spacing-sm;
+  }
+
+  &-3 {
+    margin-top: $spacing-md;
+  }
+
+  &-4 {
+    margin-top: $spacing-lg;
+  }
+}
+
+.mb {
+  &-1 {
+    margin-bottom: $spacing-xs;
+  }
+
+  &-2 {
+    margin-bottom: $spacing-sm;
+  }
+
+  &-3 {
+    margin-bottom: $spacing-md;
+  }
+
+  &-4 {
+    margin-bottom: $spacing-lg;
+  }
+}
+
+// Responsive helpers
+.hide-mobile {
+  @media (max-width: $breakpoint-sm) {
+    display: none !important;
+  }
+}
+
+.hide-desktop {
+  @media (min-width: $breakpoint-md) {
+    display: none !important;
+  }
+}

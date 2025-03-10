@@ -1,0 +1,178 @@
+// Button variables
+$button-height: 36px;
+$button-padding: 0 16px;
+$button-icon-size: 20px;
+$button-icon-spacing: 8px;
+$button-font-size: 14px;
+$button-font-weight: 500;
+$button-border-radius: 4px;
+
+// Button colors
+$button-colors: (
+    'primary': #4154F1,
+    'secondary': #F85B88,
+    'success': #4CAF50,
+    'info': #2196F3,
+    'warning': #FFA726,
+    'help': #9C27B0,
+    'danger': #F44336
+);
+
+// Button styles
+.ui-button {
+    height: $button-height;
+    padding: $button-padding;
+    border-radius: $button-border-radius;
+    font-size: $button-font-size;
+    font-weight: $button-font-weight;
+    text-transform: none;
+    transition: all 0.2s ease-in-out;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: $button-icon-spacing;
+    cursor: pointer;
+    border: none;
+    outline: none;
+    position: relative;
+
+    // Generate styles for each color variant
+    @each $name, $color in $button-colors {
+        &--#{$name} {
+            background-color: $color;
+            color: white;
+
+            &:hover {
+                background-color: darken($color, 10%);
+            }
+
+            &.ui-button--outlined {
+                background-color: transparent;
+                border: 1px solid $color;
+                color: $color;
+
+                &:hover {
+                    background-color: rgba($color, 0.1);
+                }
+            }
+
+            &.ui-button--text {
+                background-color: transparent;
+                color: $color;
+                padding: 0;
+                height: auto;
+
+                &:hover {
+                    background-color: transparent;
+                    text-decoration: underline;
+                }
+            }
+        }
+    }
+
+    // Content layout
+    &__content {
+        display: flex;
+        align-items: center;
+        gap: $button-icon-spacing;
+        min-height: 24px;
+    }
+
+    // Icon styles
+    &__icon {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        svg {
+            width: $button-icon-size;
+            height: $button-icon-size;
+        }
+    }
+
+    // Loading state
+    &--loading {
+        cursor: wait;
+
+        .ui-button__content {
+            opacity: 0.8;
+        }
+
+        .ui-button__spinner {
+            animation: spin 1s linear infinite;
+        }
+
+        .ui-button__loading-text {
+            margin-left: $button-icon-spacing;
+        }
+    }
+
+    @keyframes spin {
+        from {
+            transform: rotate(0deg);
+        }
+
+        to {
+            transform: rotate(360deg);
+        }
+    }
+
+    // Icon-only button
+    &--icon-only {
+        width: $button-height;
+        padding: 0;
+
+        .ui-button__content {
+            gap: 0;
+        }
+    }
+
+    // Button with icon
+    &--with-icon {
+        &.ui-button--icon-left {
+            .ui-button__content {
+                flex-direction: row;
+            }
+        }
+
+        &.ui-button--icon-right {
+            .ui-button__content {
+                flex-direction: row-reverse;
+            }
+        }
+    }
+
+    // Split button
+    &--split {
+        padding-right: 8px;
+
+        .ui-button__dropdown {
+            padding: 0 4px;
+            border-left: 1px solid rgba(255, 255, 255, 0.3);
+            margin-left: 4px;
+            display: flex;
+            align-items: center;
+
+            svg {
+                width: 16px;
+                height: 16px;
+            }
+        }
+    }
+
+    // Disabled state
+    &:disabled {
+        background-color: #E0E0E0;
+        color: #9E9E9E;
+        cursor: not-allowed;
+
+        &:hover {
+            background-color: #E0E0E0;
+        }
+    }
+
+    // Full width
+    &--full-width {
+        width: 100%;
+    }
+}

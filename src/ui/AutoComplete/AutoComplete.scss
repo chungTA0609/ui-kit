@@ -1,0 +1,102 @@
+.ui-autocomplete {
+    position: relative;
+    width: 100%;
+
+    &__input-wrapper {
+        display: flex;
+        align-items: center;
+        border: 1px solid #E2E8F0;
+        border-radius: 6px;
+        background-color: white;
+        transition: all 0.2s ease;
+
+        &:hover {
+            border-color: #CBD5E0;
+        }
+
+        &:focus-within {
+            border-color: #4154F1;
+            box-shadow: 0 0 0 2px rgba(65, 84, 241, 0.1);
+        }
+    }
+
+    &__input {
+        flex: 1;
+        height: 40px;
+        padding: 8px 12px;
+        border: none;
+        background: none;
+        font-size: 14px;
+        color: #1A202C;
+        outline: none;
+
+        &::placeholder {
+            color: #A0AEC0;
+        }
+
+        &:disabled {
+            background-color: #F7FAFC;
+            color: #A0AEC0;
+            cursor: not-allowed;
+        }
+    }
+
+    &__toggle {
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        width: 40px;
+        height: 40px;
+        padding: 0;
+        border: none;
+        background: none;
+        color: #718096;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+            color: #4A5568;
+        }
+
+        &:disabled {
+            color: #CBD5E0;
+            cursor: not-allowed;
+        }
+    }
+
+    &__icon {
+        width: 16px;
+        height: 16px;
+        transition: transform 0.2s ease;
+
+        &--open {
+            transform: rotate(180deg);
+        }
+    }
+
+    &__dropdown {
+        position: absolute;
+        top: 100%;
+        left: 0;
+        right: 0;
+        margin-top: 4px;
+        padding: 4px 0;
+        border: 1px solid #E2E8F0;
+        border-radius: 6px;
+        background-color: white;
+        box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+        z-index: 10;
+    }
+
+    &__option {
+        padding: 8px 12px;
+        font-size: 14px;
+        color: #1A202C;
+        cursor: pointer;
+        transition: all 0.2s ease;
+
+        &:hover {
+            background-color: #F7FAFC;
+        }
+    }
+}

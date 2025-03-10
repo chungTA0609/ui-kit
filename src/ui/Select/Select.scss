@@ -1,0 +1,44 @@
+.ui-select {
+  .MuiOutlinedInput-root {
+    border-radius: 4px;
+    
+    &:hover .MuiOutlinedInput-notchedOutline {
+      border-color: $primary-color;
+    }
+    
+    &.Mui-focused .MuiOutlinedInput-notchedOutline {
+      border-color: $primary-color;
+      border-width: 2px;
+    }
+  }
+  
+  &__label {
+    &.MuiInputLabel-root {
+      &.Mui-focused {
+        color: $primary-color;
+      }
+    }
+  }
+  
+  &__chip {
+    background-color: rgba($primary-color, 0.1);
+    color: $primary-color;
+    font-size: $font-size-small;
+    height: 24px;
+    
+    &:hover {
+      background-color: rgba($primary-color, 0.2);
+    }
+  }
+  
+  .MuiMenuItem-root {
+    &.Mui-selected {
+      background-color: rgba($primary-color, 0.1);
+      
+      &:hover {
+        background-color: rgba($primary-color, 0.2);
+      }
+    }
+  }
+}
+

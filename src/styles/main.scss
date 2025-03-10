@@ -1,0 +1,84 @@
+// Variables
+$font-family-base: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+$line-height-base: 1.5;
+$font-weight-normal: 400;
+$primary-color: #1976d2;
+$secondary-color: #dc004e;
+$background-light: #f5f5f5;
+$background-dark: #121212;
+
+// Mixins
+@mixin flex-center {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+@mixin responsive-padding($base-padding) {
+  padding: $base-padding;
+  
+  @media (min-width: 768px) {
+    padding: $base-padding * 1.5;
+  }
+}
+
+// Base styles
+:root {
+  font-family: $font-family-base;
+  line-height: $line-height-base;
+  font-weight: $font-weight-normal;
+}
+
+body {
+  margin: 0;
+  min-width: 320px;
+  min-height: 100vh;
+}
+
+// Component styles
+.card {
+  border-radius: 8px;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
+  
+  &__header {
+    border-bottom: 1px solid rgba(0, 0, 0, 0.1);
+    @include responsive-padding(16px);
+  }
+  
+  &__content {
+    @include responsive-padding(16px);
+  }
+}
+
+.button {
+  &--primary {
+    background-color: $primary-color;
+    color: white;
+    
+    &:hover {
+      background-color: darken($primary-color, 10%);
+    }
+  }
+  
+  &--secondary {
+    background-color: $secondary-color;
+    color: white;
+    
+    &:hover {
+      background-color: darken($secondary-color, 10%);
+    }
+  }
+}
+
+// Layout helpers
+.container {
+  width: 100%;
+  max-width: 1200px;
+  margin: 0 auto;
+  padding: 0 16px;
+}
+
+.flex-center {
+  @include flex-center;
+}
+

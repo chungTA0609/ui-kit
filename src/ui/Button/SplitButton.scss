@@ -1,0 +1,93 @@
+// SplitButton colors
+$split-button-colors: (
+    'primary': #4154F1,
+    'secondary': #F85B88,
+    'success': #4CAF50,
+    'info': #2196F3,
+    'warning': #FFA726,
+    'danger': #F44336
+);
+
+// SplitButton styles
+.ui-split-button {
+    display: inline-flex;
+    border-radius: 4px;
+    overflow: hidden;
+    height: 36px;
+
+    // Generate styles for each color variant
+    @each $name, $color in $split-button-colors {
+        &--#{$name} {
+            background-color: $color;
+
+            &:hover {
+
+                .ui-split-button__main,
+                .ui-split-button__split {
+                    background-color: darken($color, 10%);
+                }
+            }
+
+            .ui-split-button__main,
+            .ui-split-button__split {
+                color: white;
+                border: none;
+                background-color: transparent;
+
+                &:hover {
+                    background-color: darken($color, 10%);
+                }
+
+                &:disabled {
+                    background-color: #E0E0E0;
+                    color: #9E9E9E;
+                    cursor: not-allowed;
+                }
+            }
+
+            .ui-split-button__split {
+                border-left: 1px solid rgba(255, 255, 255, 0.2);
+            }
+        }
+    }
+
+    &__main {
+        padding: 0 16px;
+        font-size: 14px;
+        font-weight: 500;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+        flex: 1;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    &__split {
+        padding: 0 8px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+        cursor: pointer;
+        transition: all 0.2s ease-in-out;
+
+        &:focus {
+            outline: none;
+        }
+    }
+
+    // Loading state
+    &--loading {
+        opacity: 0.7;
+        cursor: not-allowed;
+
+        .ui-split-button__main,
+        .ui-split-button__split {
+            pointer-events: none;
+        }
+    }
+}

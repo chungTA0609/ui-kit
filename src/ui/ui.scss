@@ -1,0 +1,42 @@
+@import '../styles/variables.scss';
+
+// Common UI component styles
+.ui-component {
+  font-family: $font-family-base;
+  margin-bottom: $spacing-md;
+}
+
+.ui-label {
+  display: block;
+  margin-bottom: $spacing-xs;
+  font-weight: $font-weight-bold;
+  font-size: $font-size-small;
+}
+
+.ui-helper-text {
+  margin-top: $spacing-xs;
+  font-size: $font-size-small;
+  color: rgba(0, 0, 0, 0.6);
+}
+
+// Import all UI component styles
+@import './Button/Button.scss';
+@import './Button/ButtonGroup.scss';
+@import './Button/IconButton.scss';
+@import './Button/SplitButton.scss';
+@import './Input/Input.scss';
+@import './Checkbox/Checkbox.scss';
+@import './Radio/Radio.scss';
+@import './Select/Select.scss';
+@import './Switch/Switch.scss';
+@import './Slider/Slider.scss';
+@import './Progress/Progress.scss';
+@import './Badge/Badge.scss';
+@import './AutoComplete/AutoComplete.scss';
+@import './Calendar/Calendar.scss';
+@import './InputNumber/InputNumber.scss';
+@import './Chips/Chips.scss';
+@import './MultiSelect/MultiSelect.scss';
+@import './Dropdown/Dropdown.scss';
+@import './Rating/Rating.scss';
+@import './ColorPicker/ColorPicker.scss';

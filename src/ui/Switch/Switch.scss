@@ -1,0 +1,69 @@
+.ui-switch {
+  position: relative;
+  display: inline-block;
+  width: 36px;
+  height: 20px;
+  cursor: pointer;
+
+  &__input {
+    position: absolute;
+    opacity: 0;
+    width: 0;
+    height: 0;
+
+    &:checked+.ui-switch__track {
+      background-color: #4154F1;
+
+      .ui-switch__thumb {
+        transform: translateX(16px);
+        background-color: white;
+      }
+    }
+
+    &:focus+.ui-switch__track {
+      box-shadow: 0 0 0 2px rgba(65, 84, 241, 0.2);
+    }
+
+    &:disabled+.ui-switch__track {
+      opacity: 0.5;
+      cursor: not-allowed;
+
+      .ui-switch__thumb {
+        background-color: #E2E8F0;
+      }
+    }
+  }
+
+  &__track {
+    position: absolute;
+    top: 0;
+    left: 0;
+    right: 0;
+    bottom: 0;
+    background-color: #E2E8F0;
+    border-radius: 34px;
+    transition: all 0.2s ease;
+  }
+
+  &__thumb {
+    position: absolute;
+    top: 2px;
+    left: 2px;
+    width: 16px;
+    height: 16px;
+    background-color: white;
+    border-radius: 50%;
+    transition: all 0.2s ease;
+    box-shadow: 0 1px 2px rgba(0, 0, 0, 0.1);
+  }
+
+  &:hover:not(:disabled) {
+    .ui-switch__track {
+      background-color: #CBD5E0;
+    }
+
+    .ui-switch__input:checked+.ui-switch__track {
+      background-color: #3445C1;
+    }
+  }
+}
