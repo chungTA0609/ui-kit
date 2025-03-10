@@ -52,7 +52,7 @@ $breakpoint-xl: 1920px;
 
 @mixin responsive-padding($base-padding) {
   padding: $base-padding;
-  
+
   @media (min-width: $breakpoint-md) {
     padding: $base-padding * 1.5;
   }
@@ -62,3 +62,45 @@ $breakpoint-xl: 1920px;
   box-shadow: 0 4px 12px rgba(0, 0, 0, 0.05);
 }
 
+// Responsive mixins
+@mixin mobile {
+  @media (max-width: #{$breakpoint-sm - 1px}) {
+    @content;
+  }
+}
+
+@mixin tablet {
+  @media (min-width: #{$breakpoint-sm}) and (max-width: #{$breakpoint-md - 1px}) {
+    @content;
+  }
+}
+
+@mixin desktop {
+  @media (min-width: #{$breakpoint-md}) {
+    @content;
+  }
+}
+
+@mixin large-desktop {
+  @media (min-width: #{$breakpoint-lg}) {
+    @content;
+  }
+}
+
+// Responsive typography
+@mixin responsive-font($min-size, $max-size, $min-width: $breakpoint-sm, $max-width: $breakpoint-lg) {
+  font-size: $min-size;
+
+  @media (min-width: $min-width) {
+    font-size: calc(#{$min-size} + #{strip-unit($max-size - $min-size)} * ((100vw - #{$min-width}) / #{strip-unit($max-width - $min-width)}));
+  }
+
+  @media (min-width: $max-width) {
+    font-size: $max-size;
+  }
+}
+
+// Helper function to strip units
+@function strip-unit($value) {
+  @return $value / ($value * 0 + 1);
+}

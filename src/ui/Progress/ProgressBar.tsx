@@ -9,6 +9,7 @@ export interface ProgressBarProps {
   thickness?: number
   showValue?: boolean
   className?: string
+  helperText? : string
 }
 
 export const ProgressBar: React.FC<ProgressBarProps> = ({

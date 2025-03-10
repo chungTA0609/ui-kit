@@ -461,7 +461,6 @@ const UIElementsShowcase: React.FC = () => {
               label="Accept terms and conditions"
               checked={checkboxValue}
               onChange={(e) => setCheckboxValue(e.target.checked)}
-              helperText="This is a single checkbox"
             />
           </Grid>
 
@@ -560,7 +559,6 @@ const UIElementsShowcase: React.FC = () => {
               label="Enable notifications"
               checked={switchValue}
               onChange={(e) => setSwitchValue(e.target.checked)}
-              helperText="This is a toggle switch for on/off states"
             />
           </Grid>
 
@@ -568,7 +566,7 @@ const UIElementsShowcase: React.FC = () => {
             <Typography variant="subtitle1" gutterBottom>
               Disabled Switch
             </Typography>
-            <Switch label="Disabled option" disabled helperText="This is a disabled toggle switch" />
+            <Switch label="Disabled option" disabled />
           </Grid>
         </Grid>
       </Paper>

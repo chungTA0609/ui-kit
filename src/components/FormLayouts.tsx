@@ -2,6 +2,7 @@
 
 import { Input } from "../ui/Input/Input"
 import { Button } from "../ui/Button/Button"
+import { FileUploadForm } from "./FileUploadForm"
 
 export const VerticalForm = () => {
     return (
@@ -9,13 +10,16 @@ export const VerticalForm = () => {
             <h2 className="form-layout__title">Vertical</h2>
             <form className="form-layout__vertical">
                 <div className="form-layout__field">
-                    <Input label="Name" placeholder="Enter your name" />
+                    <label className="form-layout__label">Name</label>
+                    <Input placeholder="Enter your name" />
                 </div>
                 <div className="form-layout__field">
-                    <Input label="Email" type="email" placeholder="Enter your email" />
+                    <label className="form-layout__label">Email</label>
+                    <Input type="email" placeholder="Enter your email" />
                 </div>
                 <div className="form-layout__field">
-                    <Input label="Age" type="number" placeholder="Enter your age" />
+                    <label className="form-layout__label">Age</label>
+                    <Input type="number" placeholder="Enter your age" />
                 </div>
             </form>
         </div>
@@ -94,6 +98,7 @@ export const FormLayoutsShowcase = () => {
             <InlineForm />
             <VerticalGridForm />
             <HelpTextForm />
+            <FileUploadForm />
         </div>
     )
 }

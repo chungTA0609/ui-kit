@@ -6,7 +6,8 @@ export interface SwitchProps {
   checked?: boolean
   onChange?: (checked: boolean) => void
   className?: string
-  disabled?: boolean
+  disabled?: boolean,
+  label?: string
 }
 
 export const Switch: React.FC<SwitchProps> = ({ checked = false, onChange, className = "", disabled = false }) => {

@@ -4,29 +4,64 @@
   &__toolbar {
     @include flex-between;
     padding: $spacing-sm $spacing-md;
+
+    @include mobile {
+      flex-direction: column;
+      padding: $spacing-sm;
+      gap: $spacing-sm;
+    }
   }
-  
+
   &__title {
     font-weight: $font-weight-bold;
     flex-grow: 1;
+
+    @include mobile {
+      width: 100%;
+      text-align: center;
+      margin-bottom: $spacing-xs;
+    }
   }
-  
+
   &__menu-button {
     margin-right: $spacing-md;
+
+    @include mobile {
+      position: absolute;
+      left: $spacing-sm;
+      top: $spacing-sm;
+    }
   }
-  
+
   &__actions {
     display: flex;
     align-items: center;
     gap: $spacing-sm;
+
+    @include mobile {
+      width: 100%;
+      justify-content: center;
+    }
+
+    @include tablet {
+      gap: $spacing-xs;
+    }
   }
-  
+
   &__theme-switch {
     margin-right: $spacing-sm;
-    
+
+    @include mobile {
+      margin-right: 0;
+    }
+
     &-label {
       font-size: $font-size-small;
       margin-right: $spacing-xs;
+
+      @include mobile {
+        font-size: 12px;
+      }
     }
   }
 }
@@ -37,10 +72,9 @@
     &__toolbar {
       background-color: $paper-dark;
     }
-    
+
     &__title {
       color: white;
     }
   }
 }
-
