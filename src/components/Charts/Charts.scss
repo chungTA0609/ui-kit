@@ -1,0 +1,85 @@
+@import '../../styles/variables.scss';
+
+.charts-container {
+    padding-top: 2rem;
+    padding-bottom: 2rem;
+}
+
+.chart-paper {
+    padding: 1.5rem;
+    margin-bottom: 2rem;
+
+    @include mobile {
+        padding: 1rem;
+        margin-bottom: 1.5rem;
+    }
+}
+
+.chart-container {
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+
+    @include mobile {
+        height: 300px;
+    }
+}
+
+.chart-grid {
+    margin-top: 2rem;
+}
+
+// Custom tooltip styles
+.recharts-tooltip-wrapper {
+    .recharts-default-tooltip {
+        background-color: rgba(255, 255, 255, 0.95) !important;
+        border: 1px solid #e0e0e0 !important;
+        border-radius: 4px !important;
+        box-shadow: 0 2px 8px rgba(0, 0, 0, 0.1) !important;
+
+        .recharts-tooltip-label {
+            color: #333 !important;
+            font-weight: 600 !important;
+            margin-bottom: 0.5rem !important;
+        }
+
+        .recharts-tooltip-item {
+            color: #666 !important;
+
+            .recharts-tooltip-item-name {
+                margin-right: 0.5rem !important;
+            }
+
+            .recharts-tooltip-item-separator {
+                margin: 0 0.25rem !important;
+            }
+
+            .recharts-tooltip-item-value {
+                font-weight: 600 !important;
+            }
+        }
+    }
+}
+
+// Custom legend styles
+.recharts-default-legend {
+    .recharts-legend-item {
+        margin-right: 1.5rem !important;
+
+        @include mobile {
+            margin-right: 1rem !important;
+        }
+    }
+}
+
+// Responsive adjustments
+@include mobile {
+    .recharts-cartesian-axis-tick-value {
+        font-size: 10px;
+    }
+
+    .recharts-legend-item-text {
+        font-size: 12px;
+    }
+}

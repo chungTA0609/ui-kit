@@ -2,7 +2,7 @@ import type React from "react"
 import { CircularProgress } from "@mui/material"
 import { KeyboardArrowDown } from "@mui/icons-material"
 
-export type ButtonVariant = "primary" | "secondary" | "success" | "info" | "warning" | "help" | "danger"
+export type ButtonVariant = "primary" | "secondary" | "success" | "info" | "warning" | "help" | "danger" | "outline"
 
 export type ButtonStyle = "contained" | "outlined" | "text"
 
@@ -12,10 +12,11 @@ export interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElemen
   rounded?: boolean
   loading?: boolean
   icon?: React.ReactNode
-  iconPosition?: "left" | "right"
+  iconPosition?: "left" | "right" | "only"
   split?: boolean
   template?: "google" | "twitter" | "discord"
-  fullWidth?: boolean
+  fullWidth?: boolean,
+  size?: "small"
 }
 
 export const Button: React.FC<ButtonProps> = ({
@@ -77,7 +78,8 @@ export const Button: React.FC<ButtonProps> = ({
 
 export interface ButtonGroupProps {
   children: React.ReactNode
-  className?: string
+  className?: string,
+  variant?: "warning"
 }
 
 export const ButtonGroup: React.FC<ButtonGroupProps> = ({ children, className = "" }) => {

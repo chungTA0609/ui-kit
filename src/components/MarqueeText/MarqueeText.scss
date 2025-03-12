@@ -1,0 +1,50 @@
+.marquee-text {
+  width: 100%;
+  overflow: hidden;
+  white-space: nowrap;
+  position: relative;
+  
+  &__container {
+    display: inline-flex;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    
+    &--left {
+      animation-name: marquee-left;
+    }
+    
+    &--right {
+      animation-name: marquee-right;
+    }
+  }
+  
+  &__content {
+    display: inline-flex;
+    align-items: center;
+  }
+  
+  &--paused {
+    .marquee-text__container {
+      animation-play-state: paused;
+    }
+  }
+}
+
+@keyframes marquee-left {
+  0% {
+    transform: translateX(0);
+  }
+  100% {
+    transform: translateX(-100%);
+  }
+}
+
+@keyframes marquee-right {
+  0% {
+    transform: translateX(-100%);
+  }
+  100% {
+    transform: translateX(0);
+  }
+}
+

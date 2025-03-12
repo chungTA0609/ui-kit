@@ -33,7 +33,7 @@ export const FilterTable: React.FC<FilterTableProps> = ({ data }) => {
     const itemsPerPage = 10
     const [columnFilters, setColumnFilters] = useState<ColumnFilters>({})
     const [activeFilter, setActiveFilter] = useState<string | null>(null)
-    const filterTriggerRefs = useRef<{ [key: string]: React.RefObject<HTMLButtonElement> }>({})
+    const filterTriggerRefs = useRef<{ [key: string]: React.RefObject<HTMLButtonElement | null> }>({})
 
     // Initialize refs for each column
     useEffect(() => {

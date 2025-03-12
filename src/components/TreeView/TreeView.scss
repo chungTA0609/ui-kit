@@ -1,0 +1,81 @@
+.tree-view {
+  font-size: 0.875rem;
+  color: #1a202c;
+  width: 100%;
+  overflow: auto;
+
+  &__root {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__node {
+    list-style: none;
+  }
+
+  &__children {
+    list-style: none;
+    padding: 0;
+    margin: 0;
+  }
+
+  &__node-content {
+    display: flex;
+    align-items: center;
+    padding: 0.5rem;
+    cursor: pointer;
+    border-radius: 0.25rem;
+    transition: background-color 0.2s ease;
+
+    &:hover {
+      background-color: #f7fafc;
+    }
+
+    &--selected {
+      background-color: #ebf8ff;
+      font-weight: 500;
+    }
+  }
+
+  &__toggle {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    background: none;
+    border: none;
+    padding: 0;
+    cursor: pointer;
+    color: #718096;
+    transition: color 0.2s ease;
+
+    &:hover {
+      color: #4a5568;
+    }
+
+    &--placeholder {
+      width: 1.5rem;
+      height: 1.5rem;
+    }
+  }
+
+  &__icon {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    width: 1.5rem;
+    height: 1.5rem;
+    margin-right: 0.5rem;
+    color: #4a5568;
+  }
+
+  &__label {
+    flex: 1;
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+  }
+}
+

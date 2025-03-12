@@ -1,0 +1,130 @@
+.tooltip {
+    position: fixed;
+    z-index: 1000;
+    background: #333;
+    color: white;
+    border-radius: 4px;
+    padding: 0.5rem 0.75rem;
+    font-size: 0.875rem;
+    max-width: 250px;
+    box-shadow: 0 2px 8px rgba(0, 0, 0, 0.15);
+    pointer-events: auto;
+    animation: tooltipFadeIn 0.2s ease;
+
+    &__content {
+        position: relative;
+        z-index: 1;
+    }
+
+    &__arrow {
+        position: absolute;
+        width: 8px;
+        height: 8px;
+        background: #333;
+        transform: rotate(45deg);
+
+        &--top {
+            bottom: -4px;
+            left: 50%;
+            margin-left: -4px;
+        }
+
+        &--right {
+            left: -4px;
+            top: 50%;
+            margin-top: -4px;
+        }
+
+        &--bottom {
+            top: -4px;
+            left: 50%;
+            margin-left: -4px;
+        }
+
+        &--left {
+            right: -4px;
+            top: 50%;
+            margin-top: -4px;
+        }
+    }
+
+    // Position-specific animations
+    &--top {
+        animation: tooltipFadeInTop 0.2s ease;
+    }
+
+    &--right {
+        animation: tooltipFadeInRight 0.2s ease;
+    }
+
+    &--bottom {
+        animation: tooltipFadeInBottom 0.2s ease;
+    }
+
+    &--left {
+        animation: tooltipFadeInLeft 0.2s ease;
+    }
+}
+
+.tooltip-trigger {
+    display: inline-block;
+}
+
+// Animations
+@keyframes tooltipFadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
+@keyframes tooltipFadeInTop {
+    from {
+        opacity: 0;
+        transform: translateY(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes tooltipFadeInRight {
+    from {
+        opacity: 0;
+        transform: translateX(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
+
+@keyframes tooltipFadeInBottom {
+    from {
+        opacity: 0;
+        transform: translateY(-5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateY(0);
+    }
+}
+
+@keyframes tooltipFadeInLeft {
+    from {
+        opacity: 0;
+        transform: translateX(5px);
+    }
+
+    to {
+        opacity: 1;
+        transform: translateX(0);
+    }
+}
